@@ -21,9 +21,9 @@ func connect(targetHost string, targetPort int) error {
 			log.Error("Invalid auth_protocol %s. Defalting to MD5", authProtocol)
 		}
 		privProtocol := gosnmp.AES
-		if args.AuthProtocol == "AES" {
+		if args.PrivProtocol == "AES" {
 			privProtocol = gosnmp.AES
-		} else if args.AuthProtocol == "DES" {
+		} else if args.PrivProtocol == "DES" {
 			privProtocol = gosnmp.DES
 		} else {
 			log.Error("Invalid priv_protocol %s. Defaulting to AES", privProtocol)
